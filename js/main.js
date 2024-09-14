@@ -21,3 +21,21 @@ console.log(userYears("2004-02-19")); //20
 
 /*2.(Date)Напишіть функцію, яка приймає дату у форматі "YYYY-MM-DD"
 і повертає назву дня тижня для цієї дати. */
+
+function getDay(date) {
+  const dateDay = new Date(date);
+  const daysArr = [
+    "Неділя",
+    "Понеділок",
+    "Вівторок",
+    "Середа",
+    "Четверг",
+    "Пʼятниця",
+    "Субота",
+  ];
+
+  const dayIndex = dateDay.getDay();
+  return daysArr[dayIndex];
+}
+
+console.log(getDay("2004-02-19"));
