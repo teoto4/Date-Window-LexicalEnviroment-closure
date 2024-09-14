@@ -74,3 +74,38 @@ function dayToNewYear() {
 }
 
 console.log(dayToNewYear());
+
+/*4.Напишіть функцію createCounter(), яка повертає об'єкт з двома методами:
+increment() — збільшує внутрішній лічильник на 1 і повертає поточне значення.
+get() — повертає поточне значення лічильника без його зміни.
+Функція повинна демонструвати концепцію лексичного оточення (Lexical Environment),
+де лічильник зберігається у замиканні й доступний тільки через методи об'єкта,
+який повертає функція createCounter().
+Приклад роботи:
+const counter = createCounter();
+console.log(counter.get());        // 0
+counter.increment();
+counter.increment();
+console.log(counter.get());        // 2
+counter.increment();
+console.log(counter.get());        // 3 */
+
+function createCounter() {
+  let counter = 0;
+  return {
+    increment() {
+      counter += 1;
+      return counter;
+    },
+    get() {
+      return counter;
+    },
+  };
+}
+
+const count = createCounter();
+console.log(count.get());
+console.log(count.increment());
+console.log(count.increment());
+console.log(count.increment());
+console.log(count.get());
